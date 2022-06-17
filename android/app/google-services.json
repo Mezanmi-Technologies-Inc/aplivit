@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "486697169657",
+    "project_id": "vtfadminapp",
+    "storage_bucket": "vtfadminapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:486697169657:android:7b1e3b724a0948a43ee828",
+        "android_client_info": {
+          "package_name": "com.vtfoundation.aplivit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "486697169657-6v84dp803cietf3o5flf01quc6onmn8l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vtfoundation.aplivit",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "486697169657-jsf7cjr2r899percbm8abmudeshgkqlu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vtfoundation.aplivit",
+            "certificate_hash": "a37ef788812671893219ad7727b17374a0842380"
+          }
+        },
+        {
+          "client_id": "486697169657-sbvv2hh4vjed251p9a306vpp7k99patv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-PjVivc5Z4D3P05o7doMfWCUYqWEQvAU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "486697169657-sbvv2hh4vjed251p9a306vpp7k99patv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "486697169657-07gpg2rksdf587dlbejstp06do0q2odt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.vtfoundation.aplivit"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
