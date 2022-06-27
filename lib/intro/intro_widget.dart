@@ -25,7 +25,16 @@ class _IntroWidgetState extends State<IntroWidget> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [],
+            children: [
+              Text(
+                'Hello World',
+                style: FlutterFlowTheme.of(context).bodyText1,
+              ),
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [],
+              ),
+            ],
           ),
         ),
       ),
