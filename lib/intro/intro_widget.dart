@@ -58,6 +58,10 @@ class _IntroWidgetState extends State<IntroWidget> {
                                   print('IconButton pressed ...');
                                 },
                               ),
+                              Text(
+                                'Is this Text Changing',
+                                style: FlutterFlowTheme.of(context).bodyText1,
+                              ),
                             ],
                           ),
                         ],
