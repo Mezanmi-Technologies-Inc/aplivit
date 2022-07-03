@@ -17,7 +17,7 @@ class IntroWidget extends StatefulWidget {
 class _IntroWidgetState extends State<IntroWidget>
     with TickerProviderStateMixin {
   final animationsMap = {
-    'iconButtonOnPageLoadAnimation': AnimationInfo(
+    'iconButtonOnPageLoadAnimation1': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       duration: 6000,
       delay: 6000,
@@ -65,10 +65,27 @@ class _IntroWidgetState extends State<IntroWidget>
         opacity: 1,
       ),
     ),
-    'rowOnPageLoadAnimation': AnimationInfo(
+    'iconButtonOnPageLoadAnimation2': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       duration: 3600,
-      delay: 3000,
+      delay: 4800,
+      hideBeforeAnimating: true,
+      fadeIn: true,
+      initialState: AnimationState(
+        offset: Offset(0, 0),
+        scale: 1,
+        opacity: 0,
+      ),
+      finalState: AnimationState(
+        offset: Offset(0, 0),
+        scale: 1,
+        opacity: 1,
+      ),
+    ),
+    'iconButtonOnPageLoadAnimation3': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      duration: 3600,
+      delay: 3600,
       hideBeforeAnimating: true,
       fadeIn: true,
       initialState: AnimationState(
@@ -151,7 +168,7 @@ class _IntroWidgetState extends State<IntroWidget>
                                       },
                                     ).animated([
                                       animationsMap[
-                                          'iconButtonOnPageLoadAnimation']
+                                          'iconButtonOnPageLoadAnimation1']
                                     ]),
                                   ],
                                 ),
@@ -196,7 +213,10 @@ class _IntroWidgetState extends State<IntroWidget>
                                       onPressed: () {
                                         print('PreviousButton pressed ...');
                                       },
-                                    ),
+                                    ).animated([
+                                      animationsMap[
+                                          'iconButtonOnPageLoadAnimation2']
+                                    ]),
                                     FlutterFlowIconButton(
                                       borderColor: Colors.transparent,
                                       borderRadius: 30,
@@ -216,10 +236,12 @@ class _IntroWidgetState extends State<IntroWidget>
                                           ),
                                         );
                                       },
-                                    ),
+                                    ).animated([
+                                      animationsMap[
+                                          'iconButtonOnPageLoadAnimation3']
+                                    ]),
                                   ],
-                                ).animated(
-                                    [animationsMap['rowOnPageLoadAnimation']]),
+                                ),
                               ],
                             ),
                           ),
