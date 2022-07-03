@@ -86,12 +86,8 @@ class _IntroWidgetState extends State<IntroWidget>
                                       Image.asset(
                                         'assets/images/Aplivit_Logo.png',
                                         width:
-                                            MediaQuery.of(context).size.width *
-                                                0.7,
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.7,
-                                        fit: BoxFit.cover,
+                                            MediaQuery.of(context).size.width,
+                                        fit: BoxFit.fill,
                                       ).animated([
                                         animationsMap[
                                             'imageOnPageLoadAnimation']
