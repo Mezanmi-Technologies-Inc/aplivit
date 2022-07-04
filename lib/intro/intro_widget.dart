@@ -34,37 +34,6 @@ class _IntroWidgetState extends State<IntroWidget>
         opacity: 1,
       ),
     ),
-    'rowOnActionTriggerAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onActionTrigger,
-      duration: 600,
-      hideBeforeAnimating: true,
-      initialState: AnimationState(
-        offset: Offset(0, 0),
-        scale: 1,
-        opacity: 0,
-      ),
-      finalState: AnimationState(
-        offset: Offset(0, 0),
-        scale: 1,
-        opacity: 1,
-      ),
-    ),
-    'imageOnPageLoadAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      duration: 600,
-      hideBeforeAnimating: true,
-      fadeIn: true,
-      initialState: AnimationState(
-        offset: Offset(0, 0),
-        scale: 1,
-        opacity: 0,
-      ),
-      finalState: AnimationState(
-        offset: Offset(0, 0),
-        scale: 1,
-        opacity: 1,
-      ),
-    ),
     'iconButtonOnPageLoadAnimation2': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       duration: 3600,
@@ -110,11 +79,6 @@ class _IntroWidgetState extends State<IntroWidget>
           .where((anim) => anim.trigger == AnimationTrigger.onPageLoad),
       this,
     );
-    setupTriggerAnimations(
-      animationsMap.values
-          .where((anim) => anim.trigger == AnimationTrigger.onActionTrigger),
-      this,
-    );
   }
 
   @override
@@ -125,133 +89,138 @@ class _IntroWidgetState extends State<IntroWidget>
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Expanded(
-                    child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height * 1,
-                      decoration: BoxDecoration(
-                        color: Color(0xFFEEEEEE),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    FlutterFlowIconButton(
-                                      borderColor: Colors.transparent,
-                                      borderRadius: 30,
-                                      borderWidth: 1,
-                                      buttonSize: 80,
-                                      icon: Icon(
-                                        Icons.hearing,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 70,
-                                      ),
-                                      onPressed: () {
-                                        print('IconButton pressed ...');
-                                      },
-                                    ).animated([
-                                      animationsMap[
-                                          'iconButtonOnPageLoadAnimation1']
-                                    ]),
-                                  ],
-                                ),
-                                Expanded(
-                                  child: Row(
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height * 1,
+            decoration: BoxDecoration(
+              color: Color(0xFFEEEEEE),
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Expanded(
+                      child: Container(
+                        width: double.infinity,
+                        height: MediaQuery.of(context).size.height * 0.9,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Row(
                                     mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
-                                      Image.asset(
-                                        'assets/images/Aplivit_Logo.png',
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.8,
-                                        fit: BoxFit.fill,
+                                      FlutterFlowIconButton(
+                                        borderColor: Colors.transparent,
+                                        borderRadius: 30,
+                                        borderWidth: 1,
+                                        buttonSize: 80,
+                                        icon: Icon(
+                                          Icons.hearing,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          size: 70,
+                                        ),
+                                        onPressed: () {
+                                          print('IconButton pressed ...');
+                                        },
                                       ).animated([
                                         animationsMap[
-                                            'imageOnPageLoadAnimation']
+                                            'iconButtonOnPageLoadAnimation1']
                                       ]),
                                     ],
-                                  ).animated([
-                                    animationsMap['rowOnActionTriggerAnimation']
-                                  ]),
-                                ),
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    FlutterFlowIconButton(
-                                      borderColor: Colors.transparent,
-                                      borderRadius: 30,
-                                      borderWidth: 1,
-                                      buttonSize: 80,
-                                      icon: FaIcon(
-                                        FontAwesomeIcons.arrowAltCircleLeft,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 70,
-                                      ),
-                                      onPressed: () {
-                                        print('PreviousButton pressed ...');
-                                      },
-                                    ).animated([
-                                      animationsMap[
-                                          'iconButtonOnPageLoadAnimation2']
-                                    ]),
-                                    FlutterFlowIconButton(
-                                      borderColor: Colors.transparent,
-                                      borderRadius: 30,
-                                      borderWidth: 1,
-                                      buttonSize: 80,
-                                      icon: FaIcon(
-                                        FontAwesomeIcons.arrowAltCircleRight,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 70,
-                                      ),
-                                      onPressed: () async {
-                                        await Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => MainWidget(),
-                                          ),
-                                        );
-                                      },
-                                    ).animated([
-                                      animationsMap[
-                                          'iconButtonOnPageLoadAnimation3']
-                                    ]),
-                                  ],
-                                ),
-                              ],
+                                  ),
+                                  Expanded(
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Image.asset(
+                                          'assets/images/Aplivit_Logo.png',
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.8,
+                                          fit: BoxFit.fill,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      FlutterFlowIconButton(
+                                        borderColor: Colors.transparent,
+                                        borderRadius: 30,
+                                        borderWidth: 1,
+                                        buttonSize: 80,
+                                        icon: FaIcon(
+                                          FontAwesomeIcons.arrowAltCircleLeft,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          size: 70,
+                                        ),
+                                        onPressed: () {
+                                          print('PreviousButton pressed ...');
+                                        },
+                                      ).animated([
+                                        animationsMap[
+                                            'iconButtonOnPageLoadAnimation2']
+                                      ]),
+                                      FlutterFlowIconButton(
+                                        borderColor: Colors.transparent,
+                                        borderRadius: 30,
+                                        borderWidth: 1,
+                                        buttonSize: 80,
+                                        icon: FaIcon(
+                                          FontAwesomeIcons.arrowAltCircleRight,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          size: 70,
+                                        ),
+                                        onPressed: () async {
+                                          await Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  MainWidget(),
+                                            ),
+                                          );
+                                        },
+                                      ).animated([
+                                        animationsMap[
+                                            'iconButtonOnPageLoadAnimation3']
+                                      ]),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
