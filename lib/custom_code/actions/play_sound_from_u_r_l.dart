@@ -11,7 +11,7 @@ Future playSoundFromURL(String soundURL) async {
   final AudioPlayer player = AudioPlayer();
 
   if (soundURL != null && soundURL != "") {
-    await player.setUrl(soundURL);
+    await player.setAsset(soundURL);
     player.play();
   }
 }

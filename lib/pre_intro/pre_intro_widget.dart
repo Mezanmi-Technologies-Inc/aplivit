@@ -3,6 +3,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../intro/intro_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../custom_code/actions/index.dart' as actions;
 
 class PreIntroWidget extends StatefulWidget {
   const PreIntroWidget({Key key}) : super(key: key);
@@ -13,9 +14,18 @@ class PreIntroWidget extends StatefulWidget {
 
 class _PreIntroWidgetState extends State<PreIntroWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  int soundPlayedCounter = 0;
 
   @override
   Widget build(BuildContext context) {
+    
+    /* widget loading sound */
+    // String widgetSound = "../../assets/audios/1_bienvini.mp3";
+    String widgetSound = "../../assets/audios/1_bienvini_and_more.mp3";
+    actions.playSingleTime(widgetSound, soundPlayedCounter);
+    soundPlayedCounter += 1;
+    /* end widget loading sound */
+
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,

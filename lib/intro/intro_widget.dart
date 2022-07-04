@@ -6,6 +6,7 @@ import '../main/main_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../custom_code/actions/index.dart' as actions;
 
 class IntroWidget extends StatefulWidget {
   const IntroWidget({Key key}) : super(key: key);
@@ -85,15 +86,15 @@ class _IntroWidgetState extends State<IntroWidget>
 
   @override
   Widget build(BuildContext context) {
+    
+    /* widget loading sound */
+    String widgetSound = "../../assets/audios/2_app_instructions.mp3";
+    actions.playSingleTime(widgetSound, soundPlayedCounter);
+    soundPlayedCounter += 1;
+    /* end widget loading sound */
 
-    //  /* widget loading sound */
-    //     String widgetSound = "~/assets/sounds/1_bienvini.mp3";
-    //     actions.playSingleTime(widgetSound, soundPlayedCounter);
-    //     soundPlayedCounter += 1;
-
-        /* end widget loading sound */
     return Scaffold(
-       resizeToAvoidBottomInset : true,
+      resizeToAvoidBottomInset: true,
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       body: SafeArea(
