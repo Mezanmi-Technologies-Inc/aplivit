@@ -150,13 +150,17 @@ class _IntroWidgetState extends State<IntroWidget>
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,
                                       children: [
-                                        Image.asset(
-                                          'assets/images/Aplivit_Logo.png',
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.8,
-                                          fit: BoxFit.fill,
+                                        Hero(
+                                          tag: 'hero_tag1_intro',
+                                          transitionOnUserGestures: true,
+                                          child: Image.asset(
+                                            'assets/images/Aplivit_Logo.png',
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.8,
+                                            fit: BoxFit.fill,
+                                          ),
                                         ),
                                       ],
                                     ),
