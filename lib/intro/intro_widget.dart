@@ -145,7 +145,13 @@ class _IntroWidgetState extends State<IntroWidget>
                                           size: 70,
                                         ),
                                         onPressed: () {
-                                          print('IconButton pressed ...');
+                                          print('IconButton pressed - yzz ...');
+                                           /* widget loading sound */
+                                           soundPlayedCounter = 0;
+    // String widgetSound = "../../assets/audios/2_app_instructions.mp3";
+    actions.playSingleTime(widgetSound, soundPlayedCounter);
+    soundPlayedCounter += 1;
+    /* end widget loading sound */
                                         },
                                       ).animated([
                                         animationsMap[

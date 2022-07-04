@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../intro/intro_widget.dart';
@@ -18,12 +20,17 @@ class _PreIntroWidgetState extends State<PreIntroWidget> {
 
   @override
   Widget build(BuildContext context) {
-    
     /* widget loading sound */
     // String widgetSound = "../../assets/audios/1_bienvini.mp3";
     String widgetSound = "../../assets/audios/1_bienvini_and_more.mp3";
     actions.playSingleTime(widgetSound, soundPlayedCounter);
     soundPlayedCounter += 1;
+
+    Timer(Duration(seconds: 30), () {
+      print("Yeah, this line is printed after 3 seconds");
+      moveToIntro(context);
+    });
+
     /* end widget loading sound */
 
     return Scaffold(
@@ -64,12 +71,7 @@ class _PreIntroWidgetState extends State<PreIntroWidget> {
                                   Expanded(
                                     child: InkWell(
                                       onTap: () async {
-                                        await Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => IntroWidget(),
-                                          ),
-                                        );
+                                        await moveToIntro(context);
                                       },
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -107,6 +109,15 @@ class _PreIntroWidgetState extends State<PreIntroWidget> {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Future<void> moveToIntro(BuildContext context) async {
+    await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => IntroWidget(),
       ),
     );
   }
