@@ -117,9 +117,19 @@ class _IntroWidgetState extends State<IntroWidget>
     );
   }
 
+  int soundPlayedCounter = 0;
+
   @override
   Widget build(BuildContext context) {
+
+    //  /* widget loading sound */
+    //     String widgetSound = "~/assets/sounds/1_bienvini.mp3";
+    //     actions.playSingleTime(widgetSound, soundPlayedCounter);
+    //     soundPlayedCounter += 1;
+
+        /* end widget loading sound */
     return Scaffold(
+       resizeToAvoidBottomInset : true,
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       body: SafeArea(
