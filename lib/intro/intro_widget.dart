@@ -2,7 +2,9 @@ import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../main/main_widget.dart';
+import '../pre_intro/pre_intro_widget.dart';
+import '../sound_lesson/sound_lesson_widget.dart';
+import '../custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -133,8 +135,11 @@ class _IntroWidgetState extends State<IntroWidget>
                                               .primaryText,
                                           size: 70,
                                         ),
-                                        onPressed: () {
-                                          print('IconButton pressed ...');
+                                        onPressed: () async {
+                                          await actions.playSingleTime(
+                                            '../../assets/audios/2_app_instructions.mp3',
+                                            0,
+                                          );
                                         },
                                       ).animated([
                                         animationsMap[
@@ -158,7 +163,7 @@ class _IntroWidgetState extends State<IntroWidget>
                                             width: MediaQuery.of(context)
                                                     .size
                                                     .width *
-                                                0.8,
+                                                0.7,
                                             fit: BoxFit.fill,
                                           ),
                                         ),
@@ -181,8 +186,14 @@ class _IntroWidgetState extends State<IntroWidget>
                                               .primaryText,
                                           size: 70,
                                         ),
-                                        onPressed: () {
-                                          print('PreviousButton pressed ...');
+                                        onPressed: () async {
+                                          await Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  PreIntroWidget(),
+                                            ),
+                                          );
                                         },
                                       ).animated([
                                         animationsMap[
@@ -204,7 +215,7 @@ class _IntroWidgetState extends State<IntroWidget>
                                             context,
                                             MaterialPageRoute(
                                               builder: (context) =>
-                                                  MainWidget(),
+                                                  SoundLessonWidget(),
                                             ),
                                           );
                                         },
